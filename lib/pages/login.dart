@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stylishshopping/pages/welcome.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class _LoginState extends State<Login> {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      // Navigator.pop(context);
+                      Navigator.pop(context);
                       print('okky');
                     },
                     child: Icon(
@@ -43,7 +44,7 @@ class _LoginState extends State<Login> {
                   margin: EdgeInsets.only(top: 20),
                   child: Center(
                     child: Text(
-                      'Let’s Get Started',
+                      'Welcome Back',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
@@ -55,67 +56,113 @@ class _LoginState extends State<Login> {
             ),
             Column(
               children: [
-                SizedBox(
-                  width: size.width * 0.9,
-                  height: 50,
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.facebook),
-                    label: Text(
-                      "Facebook",
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0.0,
-                      backgroundColor: Color(0xFF4267B2),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Username",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Color(0xFF8F959E),
+                          )),
+                      TextField(
+                        decoration: InputDecoration(
+                          hintText: "Enter your username",
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xFFE7E8EA)),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Color(0xFFE7E8EA), width: 2),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 40,
                 ),
-                SizedBox(
-                  height: 50,
-                  width: size.width * 0.9,
-                  child: ElevatedButton.icon(
-                      onPressed: () {},
-                      icon: Image.asset('assets/images/twitter.png'),
-                      label: Text(
-                        "Twitter",
-                        style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.w600),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0.0,
-                        backgroundColor: Color(0xFFF1DA1F2),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Username",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Color(0xFF8F959E),
+                          )),
+                      TextField(
+                        decoration: InputDecoration(
+                          hintText: "Enter your password",
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xFFE7E8EA)),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Color(0xFFE7E8EA), width: 2),
+                          ),
                         ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Expanded(
+                          child: RichText(
+                        text: TextSpan(
+                          style: TextStyle(color: Color(0xFF8F959E)),
+                          children: [
+                            TextSpan(
+                                text:
+                                    'By connecting your account confirm that you agree with our'),
+                            TextSpan(
+                              text: ' Term and Condition',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
                       )),
+                    ],
+                  ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
-                SizedBox(
-                  height: 50,
-                  width: size.width * 0.9,
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Image.asset('assets/images/google.png'),
-                    label: Text(
-                      "Google",
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0.0,
-                      backgroundColor: Color(0xFFEA4335),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Welcome(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    color: Color(0xFF9775FA),
+                    width: size.width * 10,
+                    height: 75,
+                    child: Center(
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
